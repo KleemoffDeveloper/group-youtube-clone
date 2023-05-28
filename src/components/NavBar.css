@@ -1,0 +1,44 @@
+header {
+  position: fixed;
+  top: 0;
+  width: 100%; 
+  z-index: 1000;
+  background-color: #fa2200;
+}
+
+.menu {
+  top: 0;
+  display: flex;
+  padding-left: 0; 
+}
+
+.menu li {
+  padding: 20px;
+  list-style: none;
+}
+
+.menu a {
+  padding: 20px; 
+  text-decoration: none;
+  color: #fff;
+}
+
+
+.search-bar {
+  width: 400px;
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+}
+
+.search-button {
+  margin-left: 5px;
+  padding: 10px 10px;
+  border: none;
+  background-color: #fff;
+  color: #000;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+
