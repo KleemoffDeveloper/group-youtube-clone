@@ -1,3 +1,21 @@
-.home {
+.home .card-list {
+    place-items: center;
     background-color: whitesmoke;
+    display: grid;
+    grid-template-columns: repeat(3, 3fr);
+    width: 100vw;
+    height: fit-content;
+    padding: 0;
+}
+
+@media screen and (max-width: 1200px){
+    .home .card-list {
+        grid-template-columns: repeat(2, 3fr);
+    }
+}
+
+@media screen and (max-width: 800px){
+    .home .card-list {
+        grid-template-columns: auto;
+    }
 }
