@@ -4,6 +4,7 @@ import './Home.css'
 export default function Home({videos}){
     return (
         <div className="home">
+            
             <ul className="card-list"> 
             {/* 
                 If there are videos, they will display on the webpage
@@ -19,3 +20,6 @@ export default function Home({videos}){
         </div>
     );
 }
+
+
+  
