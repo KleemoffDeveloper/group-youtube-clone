@@ -1,12 +1,23 @@
 import { Link } from "react-router-dom";
 import './NavBar.css'
+import { useState } from 'react';
 
-function NavBar () {
+function NavBar ({onSearch}) {
+  const [search, setSearch] = useState("");
+
+  const handleSearch = (event) => {
+    event.preventDefault();
+    onSearch(search);
+  }
+
   return (
-    <header>
-      <ul className="menu">
+    <header className="nav-header">
+      <ul className="menu-list">
         <li>
-          <Link to="/">Youtube</Link>
+          <Link to="/" className="logo">
+            <i class="fa-brands fa-youtube fa-beat"></i>
+            <span>YouTube</span>
+          </Link>
         </li>
         <li>
           <Link to="/home">Home</Link>
@@ -14,21 +25,20 @@ function NavBar () {
         <li>
           <Link to="/about">About</Link>
         </li>
-        <li>
-          <form>
-            <input 
-              className="search-bar"
-              type="text"
-              placeholder="Search"
-            />
-            <button className="search-button" type="submit">Search</button>
-          </form>
-        </li>
       </ul>
+      <form onSubmit={handleSearch} className="search">
+        <input 
+          className="search-bar"
+          type="text"
+          placeholder="Search"
+          value={search}
+          onChange={(event) => setSearch(event.target.value)}
+        />
+        <button className="search-button" type="submit">Search</button>
+      </form>
     </header>
   )
 }
- 
  
 
 export default NavBar;
