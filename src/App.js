@@ -7,27 +7,34 @@ import { useEffect, useState } from 'react';
 import read_videos from './fetchApi';
 
 function App() {
-
   const [videos, setVideos] = useState({})
+  const [searchQuery, setSearchQuery] = useState('apex legends');
 
   useEffect(() => {
-    read_videos('apex legends', (data) => {
+    read_videos(searchQuery, (data) => {
       console.log(data.items)
       setVideos(data)
     })
-  }, [])
+  }, [searchQuery])
+
+
+  const handleSearch = (search) => {
+    setSearchQuery(search);
+  }
 
   return (
-    <Router>
-      <NavBar/>
-      
-      <Routes>
-        <Route path="/" element={<Home videos={videos.items}/>} />
-        <Route path="/home" element={<Home videos={videos.items}/>} />
-        {/* <Route path="/about" element={<About />} />  */}
-      </Routes>
+    <div className="container"> 
+      <Router>
+        <NavBar onSearch={handleSearch}/>
+        
+        <Routes>
+          <Route path="/" element={<Home videos={videos.items}/>} />
+          <Route path="/home" element={<Home videos={videos.items}/>} />
+          {/* <Route path="/about" element={<About />} />  */}
+        </Routes>
 
-    </Router>
+      </Router>
+    </div>
   );
 }
 
