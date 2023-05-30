@@ -18,8 +18,8 @@
     background-color: rgba(128, 128, 128, 0.758);
     padding: 5px;
     border-radius: 8px;
-    position: fixed;
-    transform: translate(333px, -33px);
+    position: relative;
+    width:fit-content;
     font-size: small;
 } 
 
@@ -37,6 +37,10 @@
         border-radius: 0;
         width: 100vw;
         height:auto;
+    }
+
+    .video-time {
+        border-radius: 0;
     }
 }
 
