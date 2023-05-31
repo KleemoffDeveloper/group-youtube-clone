@@ -11,16 +11,14 @@
     height: 216px;
     width: inherit;
     height: inherit;
-    border-radius: 12px;
 }
 
 .video-time {
     background-color: rgba(128, 128, 128, 0.758);
     padding: 5px;
-    border-radius: 8px;
-    position: relative;
     width:fit-content;
     font-size: small;
+    transform: translateY(-29px);
 } 
 
 @media screen and (max-width: 440px){
@@ -34,19 +32,9 @@
     }
     
     .video-card img {
-        border-radius: 0;
         width: 100vw;
         height:auto;
     }
-
-    .video-time {
-        border-radius: 0;
-    }
-}
-
-.video-card img:hover {
-    border-radius: 0;
-    transition: 0.3s;
 }
 
 .channel-title {

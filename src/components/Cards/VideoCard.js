@@ -7,7 +7,11 @@ import './VideoCard.css'
  */
 
 export default function VideoCard({ data }) {
-    function convertYoutubeDuration(duration)  {
+    const contentDetailsURL = `https://www.googleapis.com/youtube/v3/videos?id=${data.id.videoId}&part=contentDetails&key=${process.env.REACT_APP_API_KEY}`
+    const [duration, setDuration] = useState('00:00')
+    const [contentDetails, setContentDetails] = useState({})
+
+    function convertYoutubeDuration(duration) {
         const time_extractor = /^P([0-9]*D)?T([0-9]*H)?([0-9]*M)?([0-9]*S)?$/i;
         const extracted = time_extractor.exec(duration);
         if (extracted) {
@@ -16,35 +20,40 @@ export default function VideoCard({ data }) {
             const minutes = parseInt(extracted[3], 10) || 0;
             const seconds = parseInt(extracted[4], 10) || 0;
 
-            return (`${days ? (days) + ":" : ""}${hours ? (hours) + ":" : ""}${minutes ? (minutes) + "m" + ( seconds ? ":" : "") : ""}${seconds ? (seconds) + "s" : ""}`)
+            return (`${days ? (days) + "d:" : ""}${hours ? (hours) + "h:" : ""}${minutes ? (minutes) + "m" + (seconds ? ":" : "") : ""}${seconds ? (seconds) + "s" : ""}`)
         }
         return null;
     }
 
-    const [duration, setDuration] = useState('00:00')
-
-    const contentDetailsURL = `https://www.googleapis.com/youtube/v3/videos?id=${data.id.videoId}&part=contentDetails&key=${process.env.REACT_APP_API_KEY}`
-
     useEffect(() => {
         fetch(contentDetailsURL)
         .then(response => response.json())
-        .then(data => {
-            setDuration(convertYoutubeDuration(data.items[0].contentDetails.duration))
+        .then(m_data => {
+            setContentDetails(m_data.items[0].contentDetails)
+            //console.log(`${data.id.videoId}, ${m_data.items[0].id}`)
+        })
+        .catch(error => {
+            console.log(error)
         })
     }, [])
+
+    const titles = (array) => {
+        return array.map(obj => obj.snippet.title)
+    }
 
     return (
         <div className="video-card">
             <img src={data.snippet.thumbnails.medium.url} />
             <div className='video-time'>
-                {duration}
+                {convertYoutubeDuration(contentDetails.duration)}
             </div>
-            <p>
+            <div>
                 <b>{data.snippet.title}</b>
-                <div className='channel-title'>
+                <br/>
+                <b className='channel-title'>
                     {data.snippet.channelTitle}
-                </div>
-            </p>
+                </b>
+            </div>
         </div>
     );
 }
