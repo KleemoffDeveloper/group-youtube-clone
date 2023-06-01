@@ -2,6 +2,7 @@ import VideoCard from './Cards/VideoCard';
 import './Home.css'
 
 export default function Home({videos}){
+    console.log(videos);
     return (
         <div className="home">
             
