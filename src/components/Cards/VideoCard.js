@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import './VideoCard.css'
 
@@ -39,18 +40,20 @@ export default function VideoCard({ data }) {
 
     return (
         <div className="video-card">
-            <div className='video-thumbnail'>
-            <img src={data.snippet.thumbnails.medium.url} />
-            </div>
-            <div className='video-time'>
-                {duration ? duration : "LIVE"}
-            </div>
-            <div className='video-details'>
-                <p className='video-title'>{data.snippet.title}</p>
-                <p className='channel-title'>
-                    {data.snippet.channelTitle}
-                </p>
-            </div>
+            <Link to={`/video/${data.id.videoId}`}>
+                <div className='video-thumbnail'>
+                <img src={data.snippet.thumbnails.medium.url} />
+                </div>
+                <div className='video-time'>
+                    {duration ? duration : "LIVE"}
+                </div>
+                <div className='video-details'>
+                    <p className='video-title'>{data.snippet.title}</p>
+                    <p className='channel-title'>
+                        {data.snippet.channelTitle}
+                    </p>
+                </div>
+            </Link>
         </div>
     );
 }

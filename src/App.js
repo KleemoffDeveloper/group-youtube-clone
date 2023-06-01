@@ -6,6 +6,9 @@ import Home from './components/Home';
 import NavBar from './components/NavBar';
 import { useEffect, useState } from 'react';
 import read_videos from './fetchApi';
+import View from "./components/View.js"
+
+
 
 function App() {
   const [videos, setVideos] = useState({})
@@ -31,6 +34,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home videos={videos.items}/>} />
           <Route path="/home" element={<Home videos={videos.items}/>} />
+          <Route path="/video/:id" element={<View />} />
           {/* <Route path="/about" element={<About />} />  */}
         </Routes>
 
