@@ -7,19 +7,35 @@
 }
 
 .video-card img {
-    width: 384px;
-    height: 216px;
+    width: 100%;
     width: inherit;
     height: inherit;
 }
 
+.video-thumbnail {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* video-time & video-details are both being pushed upward */
 .video-time {
-    background-color: rgba(128, 128, 128, 0.758);
+    border-top-right-radius: 8px;
+    background-color: rgba(0, 0, 0, 0.542);
+    color: white;
+    width: fit-content;
     padding: 5px;
-    width:fit-content;
     font-size: small;
-    transform: translateY(-29px);
+    transform: translateY(-26px);
+    font-weight: bold;
 } 
+
+.video-details {
+    font-weight: bold;
+    transform: translateY(-26px);
+    margin: 0;
+}
 
 @media screen and (max-width: 440px){
     .video-card {
@@ -37,9 +53,12 @@
     }
 }
 
+.video-title {
+    margin-top: 10px;
+}
+
 .channel-title {
     margin-top: 10px;
-    font-weight: bold;
     font-size: 13px;
 }
 

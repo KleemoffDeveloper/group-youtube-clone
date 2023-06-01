@@ -8,9 +8,9 @@ import './VideoCard.css'
 
 export default function VideoCard({ data }) {
     const contentDetailsURL = `https://www.googleapis.com/youtube/v3/videos?id=${data.id.videoId}&part=contentDetails&key=${process.env.REACT_APP_API_KEY}`
-    const [duration, setDuration] = useState('00:00')
-    const [contentDetails, setContentDetails] = useState({})
+    const [duration, setDuration] = useState("00:00")
 
+    // Converts YouTube API format video duration to normal duration (no clue why they did that)
     function convertYoutubeDuration(duration) {
         const time_extractor = /^P([0-9]*D)?T([0-9]*H)?([0-9]*M)?([0-9]*S)?$/i;
         const extracted = time_extractor.exec(duration);
@@ -25,34 +25,31 @@ export default function VideoCard({ data }) {
         return null;
     }
 
+    // Fetches the content details - gives video duration
     useEffect(() => {
         fetch(contentDetailsURL)
         .then(response => response.json())
         .then(m_data => {
-            setContentDetails(m_data.items[0].contentDetails)
-            //console.log(`${data.id.videoId}, ${m_data.items[0].id}`)
+            setDuration(convertYoutubeDuration(m_data.items[0].contentDetails.duration))
         })
         .catch(error => {
             console.log(error)
         })
-    }, [])
-
-    const titles = (array) => {
-        return array.map(obj => obj.snippet.title)
-    }
+    })
 
     return (
         <div className="video-card">
+            <div className='video-thumbnail'>
             <img src={data.snippet.thumbnails.medium.url} />
-            <div className='video-time'>
-                {convertYoutubeDuration(contentDetails.duration)}
             </div>
-            <div>
-                <b>{data.snippet.title}</b>
-                <br/>
-                <b className='channel-title'>
+            <div className='video-time'>
+                {duration ? duration : "LIVE"}
+            </div>
+            <div className='video-details'>
+                <p className='video-title'>{data.snippet.title}</p>
+                <p className='channel-title'>
                     {data.snippet.channelTitle}
-                </b>
+                </p>
             </div>
         </div>
     );
