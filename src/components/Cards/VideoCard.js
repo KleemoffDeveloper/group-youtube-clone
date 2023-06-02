@@ -50,7 +50,7 @@ export default function VideoCard({ data }) {
                     {duration ? duration : "LIVE"}
                 </div>
                 <div className='video-details'>
-                    <p className='video-viewCount'>{statistics.viewCount.toLocaleString('us')} views</p>
+                    <p className='video-viewCount'>{Number(statistics.viewCount).toLocaleString('us')} views</p>
                     <p className='video-title'>{data.snippet.title}</p>
                     <p className='channel-title'>
                         {data.snippet.channelTitle}
