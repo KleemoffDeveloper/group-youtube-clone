@@ -1,0 +1,16 @@
+.rs-search {
+    display: flex;
+    justify-items: start;
+    align-items: center;
+    padding: 10px 10px;
+    background-color: #fa2200;
+}
+
+.search {
+    width: 100%;
+}
+
+.back-button {
+    margin-right: 5px;
+    width: 26px;
+}
