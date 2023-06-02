@@ -73,6 +73,9 @@ function NavBar({ onSearch }) {
           }
         </ul>
       </div>
+
+{/* nav-container is default for devices  */}
+
       <div className="responsive-search-container" style={{display: searchIsOn ? '' : 'none'}}>
           <ResponsiveSearchbar
           handleSearch={handleSearch}
