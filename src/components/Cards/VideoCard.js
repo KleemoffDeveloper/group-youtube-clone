@@ -8,8 +8,9 @@ import './VideoCard.css'
  */
 
 export default function VideoCard({ data }) {
-    const contentDetailsURL = `https://www.googleapis.com/youtube/v3/videos?id=${data.id.videoId}&part=contentDetails&key=${process.env.REACT_APP_API_KEY}`
+    const contentDetailsURL = `https://www.googleapis.com/youtube/v3/videos?id=${data.id.videoId}&part=contentDetails&part=statistics&key=${process.env.REACT_APP_API_KEY}`
     const [duration, setDuration] = useState("00:00")
+    const [statistics, setStatistics] = useState({})
 
     // Converts YouTube API format video duration to normal duration (no clue why they did that)
     function convertYoutubeDuration(duration) {
@@ -32,6 +33,7 @@ export default function VideoCard({ data }) {
         .then(response => response.json())
         .then(m_data => {
             setDuration(convertYoutubeDuration(m_data.items[0].contentDetails.duration))
+            setStatistics(m_data.items[0].statistics)
         })
         .catch(error => {
             console.log(error)
@@ -48,6 +50,7 @@ export default function VideoCard({ data }) {
                     {duration ? duration : "LIVE"}
                 </div>
                 <div className='video-details'>
+                    <p className='video-viewCount'>{Number(statistics.viewCount).toLocaleString('us')} views</p>
                     <p className='video-title'>{data.snippet.title}</p>
                     <p className='channel-title'>
                         {data.snippet.channelTitle}

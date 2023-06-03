@@ -57,6 +57,11 @@
     margin-top: 10px;
 }
 
+.video-viewCount {
+    color: black;
+    text-decoration: none;
+}
+
 .channel-title {
     margin-top: 10px;
     font-size: 13px;
