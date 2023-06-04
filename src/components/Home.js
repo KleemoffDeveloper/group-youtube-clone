@@ -1,5 +1,6 @@
 import VideoCard from './Cards/VideoCard';
 import './Home.css'
+import ModalWindow from './ModalWindow';
 
 export default function Home({videos}){
     return (
@@ -13,7 +14,7 @@ export default function Home({videos}){
             */}
                 {videos ? videos.map(video => <VideoCard data={video}/>) : (
                     <div>
-                        <h1>Error. Something went wrong...</h1>
+                        <ModalWindow />
                     </div>
                 )}
             </ul>

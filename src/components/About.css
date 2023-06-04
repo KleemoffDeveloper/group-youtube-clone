@@ -1,0 +1,59 @@
+a img {
+    height: 70px;
+    width: 70px;
+
+}
+
+.about-page {
+    align-items: center;
+    border: solid 2px orangered;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    justify-content: center;
+    padding: 30px;
+}
+
+.intro {
+align-items: center;
+color: orangered;
+}
+
+ul {
+    list-style: none;
+}
+
+
+/* Group member cards  */
+
+.angie-card{
+    align-items: center;
+    padding: 20px;
+}
+
+/* .angie-card img {
+
+} */
+
+.kinu-card{
+    align-items: center;
+    padding: 20px;
+}
+
+.silis-card {
+    align-items: center;
+    padding: 20px;
+}
+
+/* .silis-card img {
+    align-self: center;
+} */
+
+.wai-card {
+    align-items: center;
+    padding: 20px;
+}
+
+/* .wai-card img {
+
+} */

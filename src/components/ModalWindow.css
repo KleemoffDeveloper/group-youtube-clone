@@ -1,0 +1,16 @@
+.modal-window {
+    align-items: center;
+    background: rgba(0, 0, 0, .7);
+    display: flex;
+    height: 50%;
+    justify-content: center;
+    position: absolute;
+    top: 0%;
+    width: 50%;
+    z-index: 1;
+}
+
+.modal-box {
+    background: rgb(202,198,198);
+    padding: 50px;
+}
