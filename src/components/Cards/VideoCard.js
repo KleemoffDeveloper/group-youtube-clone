@@ -30,33 +30,35 @@ export default function VideoCard({ data }) {
     // Fetches the content details - gives video duration
     useEffect(() => {
         fetch(contentDetailsURL)
-        .then(response => response.json())
-        .then(m_data => {
-            setDuration(convertYoutubeDuration(m_data.items[0].contentDetails.duration))
-            setStatistics(m_data.items[0].statistics)
-        })
-        .catch(error => {
-            console.log(error)
-        })
+            .then(response => response.json())
+            .then(m_data => {
+                setDuration(convertYoutubeDuration(m_data.items[0].contentDetails.duration))
+                setStatistics(m_data.items[0].statistics)
+            })
+            .catch(error => {
+                console.log(error)
+            })
     })
 
     return (
         <div className="video-card">
             <Link to={`/video/${data.id.videoId}`}>
                 <div className='video-thumbnail'>
-                <img src={data.snippet.thumbnails.medium.url} />
+                    <img src={data.snippet.thumbnails.medium.url} />
                 </div>
-                <div className='video-time'>
-                    {duration ? duration : "LIVE"}
-                </div>
-                <div className='video-details'>
-                    <p className='video-viewCount'>{Number(statistics.viewCount).toLocaleString('us')} views</p>
+            </Link>
+            <div className='video-time'>
+                {duration ? duration : "LIVE"}
+            </div>
+            <div className='video-details'>
+                <p className='video-viewCount'><span>{Number(statistics.viewCount).toLocaleString('us')} views</span></p>
+                <Link to={`/video/${data.id.videoId}`}>
                     <p className='video-title'>{data.snippet.title}</p>
                     <p className='channel-title'>
                         {data.snippet.channelTitle}
                     </p>
-                </div>
-            </Link>
+                </Link>
+            </div>
         </div>
     );
 }

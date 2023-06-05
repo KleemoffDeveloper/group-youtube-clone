@@ -3,7 +3,7 @@
     height: fit-content;
     margin-top: 15px;
     margin-bottom: 15px;
-    cursor: pointer;
+    /* cursor: pointer; */
 }
 
 .video-card img {
@@ -57,7 +57,7 @@
     margin-top: 10px;
 }
 
-.video-viewCount {
+.video-viewCount span {
     color: black;
     text-decoration: none;
 }
