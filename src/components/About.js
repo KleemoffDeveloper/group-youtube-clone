@@ -17,7 +17,7 @@ const toggleShowMore = () => {
     Welcome to our team's "About Me" page! Here you'll find an introduction to each member of our talented and dedicated team. 
    
    
-    Our team consist of four briliant aspiring software engineers, Silis Kleemoff, Wai Leong Chong, Angie Diaz, and Kinu Wright. 
+    Our team consist of four briliant aspiring software engineers, Silis Kleemoff, Wai Leong Chong, and Kinu Wright. 
 
     </h1>
   </section>
@@ -27,7 +27,10 @@ const toggleShowMore = () => {
     {showMore ? (
               <div>
               <a className="show-more-button" onClick={toggleShowMore}>Show Less ...</a>
-              <ul>Junior Software Engineer
+              <ul>
+                <h2>Hi 👋, I'm Silis Kleemoff</h2>
+                <br></br>
+                Junior Software Engineer
                  <li> 💻 I'm a Pursuit Fellow </li> 
                  <li> 🌐 I do Fullstack Web Development</li> 
                  <li> 🎮 I also do Unity Game Development</li> 
@@ -50,8 +53,9 @@ const toggleShowMore = () => {
     {showMore ? (
               <div>
               <a className="show-more-button" onClick={toggleShowMore}>Show Less ...</a>
-             <p>Full-Stack Developer learning at Pursuit, passionate about innovation.</p> 
-             <ul>
+              <h2>Hi 👋, I'm Wai Leong Chong</h2>
+             <p>Full-Stack Developer learning at Pursuit, passionate about innovation. In 2017, I cofounded a design studio that assists clients through printing and brand design. In that position, I also helped small businesses design their websites. Before that, I worked as a graphic designer for six years at a printing firm, where I worked on web and paper product design.</p> 
+            <ul>
                 <li>🌱 Im currently learning Javascript and React</li>
                 <li>📫 How to reach me waileongchong@pursuit.org</li>
              </ul>
@@ -69,7 +73,7 @@ const toggleShowMore = () => {
              )}
   </section>
 
-  <section className="angie-card">
+  {/* <section className="angie-card">
     <img src="https://media.licdn.com/dms/image/C4E03AQFDM-8Ya5rTxQ/profile-displayphoto-shrink_800_800/0/1662908609973?e=1691625600&v=beta&t=DLc6_DSZXSiSJkYIgTmd6sdx33uc0yCMyphApQckXzk" alt="angie-photo"></img>
     {showMore ? (
               <div>
@@ -80,14 +84,14 @@ const toggleShowMore = () => {
              <a className="show-more-button" onClick={toggleShowMore}>Show More ...</a>
             
              )}
-  </section>
+  </section> */}
 
   <section className="kinu-card">
     <img src="https://media.licdn.com/dms/image/D4E03AQEOzfyzXF4XcQ/profile-displayphoto-shrink_800_800/0/1667164033793?e=1691625600&v=beta&t=11KZ0GFeGdnCGc096XdeH8bC78d2sIpPELsbxIT4rU8" alt="kinu-photo"></img>
     {showMore ? (
               <div>
               <a className="show-more-button" onClick={toggleShowMore}>Show Less ...</a>
-             
+             <h2>Hi 👋, I'm Kinu Wright</h2>
               </div>
              ) : (
              <a className="show-more-button" onClick={toggleShowMore}>Show More ...</a>

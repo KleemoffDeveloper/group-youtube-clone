@@ -14,6 +14,16 @@ a img {
     padding: 30px;
 }
 
+.show-less-button :hover {
+cursor: pointer;  
+ color: orangered; 
+}
+
+.show-more-button :hover {
+ cursor: pointer;  
+ color: orangered;
+}
+
 .intro {
 align-items: center;
 color: orangered;
@@ -38,11 +48,13 @@ ul {
 .kinu-card{
     align-items: center;
     padding: 20px;
+    text-align: center;
 }
 
 .silis-card {
     align-items: center;
     padding: 20px;
+    text-align: center;
 }
 
 /* .silis-card img {
@@ -52,6 +64,7 @@ ul {
 .wai-card {
     align-items: center;
     padding: 20px;
+    text-align: center;
 }
 
 /* .wai-card img {

@@ -3,6 +3,7 @@ import './Home.css'
 import ModalWindow from './ModalWindow';
 
 export default function Home({videos}){
+    console.log(videos);
     return (
         <div className="home">
             
