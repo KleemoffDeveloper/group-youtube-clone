@@ -12,33 +12,33 @@ import View from "./components/View.js"
 
 function App() {
   const [videos, setVideos] = useState({})
-  const [searchQuery, setSearchQuery] = useState('apex legends');
 
   useEffect(() => {
-    read_videos(searchQuery, (data) => {
+    read_videos('', (data) => {
       console.log(data.items)
       setVideos(data)
     })
-  }, [searchQuery])
+  }, [])
 
 
   const handleSearch = (search) => {
-    setSearchQuery(search);
+    // setSearchQuery(search);
+    read_videos(search, (data) => {
+      console.log(data.items)
+      setVideos(data)
+    })
   }
 
   return (
     <div className="container"> 
       <Router>
-        <NavBar onSearch={handleSearch}/>
-        
+        <NavBar onSearch={handleSearch}/>        
         <Routes>
-          <Route path="/" element={<Home videos={videos.items}/>} />
-          <Route path="/home" element={<Home videos={videos.items}/>} />
+          <Route path="/" element={<Home videos={videos.items || []}/>} />
+          <Route path="/home" element={<Home videos={videos.items || []}/>} />
           <Route path="/about" element={<About />} />
           <Route path="/video/:id" element={<View />} />
-          {/* <Route path="/about" element={<About />} />  */}
         </Routes>
-
       </Router>
     </div>
   )

@@ -1,11 +1,15 @@
 export default function read_videos(search = "", callback){
+  console.log("youtube-clone")
   fetch(
     `https://youtube.googleapis.com/youtube/v3/search?q=${search}&maxResults=20&part=snippet&type=video&key=${process.env.REACT_APP_API_KEY}`
   )
     .then((response) => response.json())
     .then((data) => {
+      // console.log(data);
      callback(data);
     })
     .catch((error) => console.log(error));
 }
+
+
 
