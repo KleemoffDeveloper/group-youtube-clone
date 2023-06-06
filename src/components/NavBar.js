@@ -62,11 +62,7 @@ function NavBar({ onSearch }) {
                   className="search-bar"
                   type="text"
                   placeholder="Search"
-                  onChange={(e) => {
-                    setSearch(e.target.value)
-                    e.target.value = search
-                  }}
-                  value={search}
+                  onChange={(e) => setSearch(e.target.value)}                
                 />
                 <button type="submit" className="search-button">Submit</button>
               </form>)
