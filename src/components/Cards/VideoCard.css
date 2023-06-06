@@ -33,7 +33,7 @@
 
 .video-details {
     font-weight: bold;
-    transform: translateY(-26px);
+    /* transform: translateY(-26px); */
     margin: 0;
 }
 
