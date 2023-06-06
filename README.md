@@ -1,9 +1,9 @@
-<h1><span style="display:flex; align-items:center;"><img src="https://www.freeiconspng.com/uploads/hd-youtube-logo-png-transparent-background-20.png" style="width:5vw; margin:0; padding:0;"/> YouTube Clone Project - <a href="https://trello.com/b/SUgPghQi/react-project-board" target="_blank">Trello Board</a>.</span></h1>
+<h1><span>YouTube Clone Project</span></h1>
+=> See our <a href="https://trello.com/b/SUgPghQi/react-project-board" target="_blank">Trello Board</a>.
 
 <p>
-<h1>Group Members</h1>
+<h1>Ɛ> Group Members <3</h1>
 <ul>
-<li><a href="https://github.com/ayd823">Angie Diaz</a></li>
 <li><a href="https://github.com/KleemoffDeveloper">Silis Kleemoff</a></li>
 <li><a href="https://github.com/waiLeongChong">Wai Leong Chong</a></li>
 <li><a href="https://github.com/wrightKinu">Kinu Wright</a></li>
@@ -21,8 +21,8 @@ We are super proud of the work we've done and we hope you enjoy our project!
 # Screenshots
 
 <ul>
-    <img src="#"/>
-    <img src="#"/>
-    <img src="#"/>
-    <img src="#"/>
+    <img width="auto" src="./public/screenshots/sc1.png"/>
+    <img width="auto" src="./public/screenshots/sc2.png"/>
+    <img width="auto" src="./public/screenshots/sc3.png"/>
+    <img width="auto" src="./public/screenshots/sc4.png"/>
 </ul>
