@@ -1,7 +1,6 @@
 import VideoCard from './Cards/VideoCard';
 import './Home.css'
 import ModalWindow from './ModalWindow';
-
 export default function Home({videos}){
     console.log(videos);
     return (
@@ -15,7 +14,7 @@ export default function Home({videos}){
             */}
                 {videos ? videos.map(video => <VideoCard data={video}/>) : (
                     <div>
-                        <ModalWindow />
+                        <ModalWindow/>
                     </div>
                 )}
             </ul>
