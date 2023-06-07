@@ -39,16 +39,20 @@ function NavBar({ onSearch }) {
 
   return (
     <header className="nav-header">
-      <div className="nav-container" style={{display: searchIsOn ? 'none' : ''}}>
+      <div className="nav-container" style={{ display: searchIsOn ? 'none' : '' }}>
         <ul className="menu-list">
           <li>
-            <Link to="/" className="logo">
+            <Link to="/" className="logo" onClick={() => {
+              onSearch('')
+            }}>
               {/* fa-beat */}
               <i class="fa-brands fa-youtube"><span>YouTube</span></i>
             </Link>
           </li>
           <li>
-            <Link to="/home">Home</Link>
+            <Link to="/home" onClick={() => {
+              onSearch('apex legends')
+            }}>Home</Link>
           </li>
           <li>
             <Link to="/about">About</Link>
@@ -62,7 +66,7 @@ function NavBar({ onSearch }) {
                   className="search-bar"
                   type="text"
                   placeholder="Search"
-                  onChange={(e) => setSearch(e.target.value)}                
+                  onChange={(e) => setSearch(e.target.value)}
                 />
                 <button type="submit" className="search-button">Submit</button>
               </form>)
@@ -70,15 +74,15 @@ function NavBar({ onSearch }) {
         </ul>
       </div>
 
-{/* nav-container is default for devices  */}
+      {/* nav-container is default for devices  */}
 
-      <div className="responsive-search-container" style={{display: searchIsOn ? '' : 'none'}}>
-          <ResponsiveSearchbar
+      <div className="responsive-search-container" style={{ display: searchIsOn ? '' : 'none' }}>
+        <ResponsiveSearchbar
           handleSearch={handleSearch}
           setSearch={setSearch}
           search={search}
           toggle={toggleSearchbar}
-          />
+        />
       </div>
     </header>
   )
