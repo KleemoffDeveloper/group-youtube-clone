@@ -10,6 +10,8 @@
 </ul>
 </p>
 
+<p><b><u>Note: </u></b>One of our previous versions were requesting the YouTube API too often and used up our tokens instantly. <a href="https://github.com/waiLeongChong">Wai Leong Chong</a> brought this to our attention and fixed the issue. This means that the <ins>duration</ins> and <ins>view count</ins> will <b>no longer</b> be displayed as shown in the screenshots. Thank you for your understanding.</p>
+
 # About
 
 <p>
